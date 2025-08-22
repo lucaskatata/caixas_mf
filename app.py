@@ -12,6 +12,7 @@ st.title("Informações caixas")
 # st.dataframe(df)
 
 lista_sku = df["sku"].unique().tolist()
+lista_sku = sorted(lista_sku)
 
 col1, col2, col3, col4, col5 = st.columns(5)
 
