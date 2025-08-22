@@ -14,7 +14,7 @@ st.title("Informações caixas")
 lista_sku = df["sku"].unique().tolist()
 lista_sku = sorted(lista_sku)
 
-col1, col2, col3, col4, col5 = st.columns(5)
+col1, col2, col3 = st.columns(3)
 
 sku_selecionado = col1.selectbox(label="Sku", options=lista_sku)
 
@@ -25,3 +25,7 @@ df_filtrado = df_filtrado.set_index("caixa")
 
 
 col3.dataframe(df_filtrado)
+
+total = df_filtrado["quantidade"].sum()
+
+col2.metric(value=total, label="Total")
